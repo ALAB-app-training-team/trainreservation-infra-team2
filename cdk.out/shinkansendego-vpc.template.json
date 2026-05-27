@@ -1,0 +1,558 @@
+{
+ "Resources": {
+  "Vpc8378EB38": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.110.1.0/24",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/Resource"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet1Subnet04C2A2ED": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "ap-northeast-1a",
+    "CidrBlock": "10.110.1.0/28",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "shinkansendego-private-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1/Subnet"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet1RouteTable65CC5A19": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1/RouteTable"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet1RouteTableAssociation5C03C957": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "Vpcshinkansendegoprivate1Subnet1RouteTable65CC5A19"
+    },
+    "SubnetId": {
+     "Ref": "Vpcshinkansendegoprivate1Subnet1Subnet04C2A2ED"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1/RouteTableAssociation"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet2Subnet21AD4E03": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "ap-northeast-1c",
+    "CidrBlock": "10.110.1.16/28",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "shinkansendego-private-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2/Subnet"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet2RouteTableBF2D39BF": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2/RouteTable"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet2RouteTableAssociationF39D6B58": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "Vpcshinkansendegoprivate1Subnet2RouteTableBF2D39BF"
+    },
+    "SubnetId": {
+     "Ref": "Vpcshinkansendegoprivate1Subnet2Subnet21AD4E03"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2/RouteTableAssociation"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet3Subnet8019D473": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "ap-northeast-1d",
+    "CidrBlock": "10.110.1.32/28",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "shinkansendego-private-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3/Subnet"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet3RouteTable78099B14": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3/RouteTable"
+   }
+  },
+  "Vpcshinkansendegoprivate1Subnet3RouteTableAssociation55312C12": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "Vpcshinkansendegoprivate1Subnet3RouteTable78099B14"
+    },
+    "SubnetId": {
+     "Ref": "Vpcshinkansendegoprivate1Subnet3Subnet8019D473"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3/RouteTableAssociation"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet1Subnet46A04E5B": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "ap-northeast-1a",
+    "CidrBlock": "10.110.1.48/28",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "shinkansendego-private-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1/Subnet"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet1RouteTable0EEC8C68": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1/RouteTable"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet1RouteTableAssociation7A93BAA1": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "Vpcshinkansendegoprivate2Subnet1RouteTable0EEC8C68"
+    },
+    "SubnetId": {
+     "Ref": "Vpcshinkansendegoprivate2Subnet1Subnet46A04E5B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1/RouteTableAssociation"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet2Subnet9D287BF1": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "ap-northeast-1c",
+    "CidrBlock": "10.110.1.64/28",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "shinkansendego-private-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2/Subnet"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet2RouteTable71D93A59": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2/RouteTable"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet2RouteTableAssociationE3EA6A1F": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "Vpcshinkansendegoprivate2Subnet2RouteTable71D93A59"
+    },
+    "SubnetId": {
+     "Ref": "Vpcshinkansendegoprivate2Subnet2Subnet9D287BF1"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2/RouteTableAssociation"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet3SubnetBE930D11": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": "ap-northeast-1d",
+    "CidrBlock": "10.110.1.80/28",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "shinkansendego-private-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3/Subnet"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet3RouteTable24BBF12E": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3/RouteTable"
+   }
+  },
+  "Vpcshinkansendegoprivate2Subnet3RouteTableAssociation38BD4035": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "Vpcshinkansendegoprivate2Subnet3RouteTable24BBF12E"
+    },
+    "SubnetId": {
+     "Ref": "Vpcshinkansendegoprivate2Subnet3SubnetBE930D11"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3/RouteTableAssociation"
+   }
+  },
+  "BeSgA27FD967": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "shinkansendego-vpc/BeSg",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/BeSg/Resource"
+   }
+  },
+  "DbSg495F8305": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "shinkansendego-vpc/DbSg",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "Vpc8378EB38"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/DbSg/Resource"
+   }
+  },
+  "BeToDb5432": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "AppRunner to RDS PostgreSQL",
+    "FromPort": 5432,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "DbSg495F8305",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "BeSgA27FD967",
+      "GroupId"
+     ]
+    },
+    "ToPort": 5432
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/BeToDb5432"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/33MQQuCQBAF4N/ifZ1MirqGh+iUaHiNdZ1iynZlZ1YJ8b9HdvDW6T0+Hi+F9W4PSaQHjk3zjFuqYSxFm6fSA1/RpDBWnVHZzVZ5pnJPvRYsQ21Rvri0wgXBi65bXHyxA7MzpIWcVSWa4EneR+9CN4//wsnePTJPqkB2wZv5/xykCzIp6xqEB6/6dAPrLSTRg4liH6zQC6H45Qe3cuJl5QAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-vpc/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "VpcId": {
+   "Value": {
+    "Ref": "Vpc8378EB38"
+   }
+  },
+  "ExportsOutputRefVpcshinkansendegoprivate1Subnet1Subnet04C2A2ED3C793ADF": {
+   "Value": {
+    "Ref": "Vpcshinkansendegoprivate1Subnet1Subnet04C2A2ED"
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate1Subnet1Subnet04C2A2ED3C793ADF"
+   }
+  },
+  "ExportsOutputRefVpcshinkansendegoprivate1Subnet2Subnet21AD4E03BDDEAA27": {
+   "Value": {
+    "Ref": "Vpcshinkansendegoprivate1Subnet2Subnet21AD4E03"
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate1Subnet2Subnet21AD4E03BDDEAA27"
+   }
+  },
+  "ExportsOutputRefVpcshinkansendegoprivate1Subnet3Subnet8019D473039FBC11": {
+   "Value": {
+    "Ref": "Vpcshinkansendegoprivate1Subnet3Subnet8019D473"
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate1Subnet3Subnet8019D473039FBC11"
+   }
+  },
+  "ExportsOutputRefVpcshinkansendegoprivate2Subnet1Subnet46A04E5BBF6E2144": {
+   "Value": {
+    "Ref": "Vpcshinkansendegoprivate2Subnet1Subnet46A04E5B"
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate2Subnet1Subnet46A04E5BBF6E2144"
+   }
+  },
+  "ExportsOutputRefVpcshinkansendegoprivate2Subnet2Subnet9D287BF19892D99F": {
+   "Value": {
+    "Ref": "Vpcshinkansendegoprivate2Subnet2Subnet9D287BF1"
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate2Subnet2Subnet9D287BF19892D99F"
+   }
+  },
+  "ExportsOutputRefVpcshinkansendegoprivate2Subnet3SubnetBE930D112C0F244B": {
+   "Value": {
+    "Ref": "Vpcshinkansendegoprivate2Subnet3SubnetBE930D11"
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate2Subnet3SubnetBE930D112C0F244B"
+   }
+  },
+  "ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8": {
+   "Value": {
+    "Fn::GetAtt": [
+     "DbSg495F8305",
+     "GroupId"
+    ]
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8"
+   }
+  },
+  "ExportsOutputFnGetAttBeSgA27FD967GroupId29AD01AF": {
+   "Value": {
+    "Fn::GetAtt": [
+     "BeSgA27FD967",
+     "GroupId"
+    ]
+   },
+   "Export": {
+    "Name": "shinkansendego-vpc:ExportsOutputFnGetAttBeSgA27FD967GroupId29AD01AF"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

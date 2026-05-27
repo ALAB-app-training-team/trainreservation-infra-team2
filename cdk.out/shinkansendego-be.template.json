@@ -1,0 +1,161 @@
+{
+ "Resources": {
+  "VpcConnector": {
+   "Type": "AWS::AppRunner::VpcConnector",
+   "Properties": {
+    "SecurityGroups": [
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputFnGetAttBeSgA27FD967GroupId29AD01AF"
+     }
+    ],
+    "Subnets": [
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate1Subnet1Subnet04C2A2ED3C793ADF"
+     },
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate1Subnet2Subnet21AD4E03BDDEAA27"
+     },
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate1Subnet3Subnet8019D473039FBC11"
+     },
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate2Subnet1Subnet46A04E5BBF6E2144"
+     },
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate2Subnet2Subnet9D287BF19892D99F"
+     },
+     {
+      "Fn::ImportValue": "shinkansendego-vpc:ExportsOutputRefVpcshinkansendegoprivate2Subnet3SubnetBE930D112C0F244B"
+     }
+    ],
+    "VpcConnectorName": "shinkansendego-connector"
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-be/VpcConnector"
+   }
+  },
+  "AppRunnerEcrAccessRole23CA5BBD": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "build.apprunner.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSAppRunnerServicePolicyForECRAccess"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-be/AppRunnerEcrAccessRole/Resource"
+   }
+  },
+  "AppRunnerRuntimeRoleDE576B31": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "tasks.apprunner.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-be/AppRunnerRuntimeRole/Resource"
+   }
+  },
+  "AppRunnerRuntimeRoleDefaultPolicy693E3D27": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::ImportValue": "shinkansendego-db:ExportsOutputRefPostgresSecretAttachment75CD6F6F9ED7447B"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "AppRunnerRuntimeRoleDefaultPolicy693E3D27",
+    "Roles": [
+     {
+      "Ref": "AppRunnerRuntimeRoleDE576B31"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-be/AppRunnerRuntimeRole/DefaultPolicy/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yXHQQ7CIBBA0bN0D2PbaHTPBQxN3Bqk02RaOhAoNoZwd6Ndvf976K43aBuzJ2nHRTp6QRk2Yxdh9vQsJoSYmTGCmvgRrPLMaDcfBZkVivYOhZr47907sp/fHlWr0Jh8jharYD8izOn07s/QXaBt5kQkY+aNVgR9+AVgl1/jjgAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-be/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
