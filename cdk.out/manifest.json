@@ -1,0 +1,662 @@
+{
+  "version": "39.0.0",
+  "artifacts": {
+    "shinkansendego-vpc.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "shinkansendego-vpc.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "shinkansendego-vpc": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://121364032553/ap-northeast-1",
+      "properties": {
+        "templateFile": "shinkansendego-vpc.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/4c77c593e164dfa212722ca34c66df14b03c7687614ce2d87345c8433989fdff.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "shinkansendego-vpc.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-lookup-role-121364032553-ap-northeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "shinkansendego-vpc.assets"
+      ],
+      "metadata": {
+        "/shinkansendego-vpc/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc8378EB38"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet1Subnet04C2A2ED"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet1RouteTable65CC5A19"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet1RouteTableAssociation5C03C957"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet2Subnet21AD4E03"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet2RouteTableBF2D39BF"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet2RouteTableAssociationF39D6B58"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet3Subnet8019D473"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet3RouteTable78099B14"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-1Subnet3/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate1Subnet3RouteTableAssociation55312C12"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet1Subnet46A04E5B"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet1RouteTable0EEC8C68"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet1RouteTableAssociation7A93BAA1"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet2Subnet9D287BF1"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet2RouteTable71D93A59"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet2RouteTableAssociationE3EA6A1F"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet3SubnetBE930D11"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet3RouteTable24BBF12E"
+          }
+        ],
+        "/shinkansendego-vpc/Vpc/shinkansendego-private-2Subnet3/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpcshinkansendegoprivate2Subnet3RouteTableAssociation38BD4035"
+          }
+        ],
+        "/shinkansendego-vpc/BeSg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BeSgA27FD967"
+          }
+        ],
+        "/shinkansendego-vpc/DbSg/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DbSg495F8305"
+          }
+        ],
+        "/shinkansendego-vpc/BeToDb5432": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BeToDb5432"
+          }
+        ],
+        "/shinkansendego-vpc/VpcId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcId"
+          }
+        ],
+        "/shinkansendego-vpc/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Ref\":\"Vpcshinkansendegoprivate1Subnet1Subnet04C2A2ED\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVpcshinkansendegoprivate1Subnet1Subnet04C2A2ED3C793ADF"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Ref\":\"Vpcshinkansendegoprivate1Subnet2Subnet21AD4E03\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVpcshinkansendegoprivate1Subnet2Subnet21AD4E03BDDEAA27"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Ref\":\"Vpcshinkansendegoprivate1Subnet3Subnet8019D473\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVpcshinkansendegoprivate1Subnet3Subnet8019D473039FBC11"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Ref\":\"Vpcshinkansendegoprivate2Subnet1Subnet46A04E5B\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVpcshinkansendegoprivate2Subnet1Subnet46A04E5BBF6E2144"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Ref\":\"Vpcshinkansendegoprivate2Subnet2Subnet9D287BF1\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVpcshinkansendegoprivate2Subnet2Subnet9D287BF19892D99F"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Ref\":\"Vpcshinkansendegoprivate2Subnet3SubnetBE930D11\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVpcshinkansendegoprivate2Subnet3SubnetBE930D112C0F244B"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Fn::GetAtt\":[\"DbSg495F8305\",\"GroupId\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttDbSg495F8305GroupIdA39418C8"
+          }
+        ],
+        "/shinkansendego-vpc/Exports/Output{\"Fn::GetAtt\":[\"BeSgA27FD967\",\"GroupId\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttBeSgA27FD967GroupId29AD01AF"
+          }
+        ],
+        "/shinkansendego-vpc/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/shinkansendego-vpc/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "shinkansendego-vpc"
+    },
+    "shinkansendego-db.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "shinkansendego-db.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "shinkansendego-db": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://121364032553/ap-northeast-1",
+      "properties": {
+        "templateFile": "shinkansendego-db.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/50a55e8bea7423a206505c63d2ade2b2227a0d5e994e10e8b28920e04b0b6ca9.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "shinkansendego-db.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-lookup-role-121364032553-ap-northeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "shinkansendego-vpc",
+        "shinkansendego-db.assets"
+      ],
+      "metadata": {
+        "/shinkansendego-db/Postgres/SubnetGroup/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PostgresSubnetGroup9F8A4D6E"
+          }
+        ],
+        "/shinkansendego-db/Postgres/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "shinkansendegodbPostgresSecretB3F5CC833fdaad7efa858a3daf9490cf0a702aeb"
+          }
+        ],
+        "/shinkansendego-db/Postgres/Secret/Attachment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PostgresSecretAttachment75CD6F6F"
+          }
+        ],
+        "/shinkansendego-db/Postgres/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Postgres9DC8BB04"
+          }
+        ],
+        "/shinkansendego-db/DbEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DbEndpoint"
+          }
+        ],
+        "/shinkansendego-db/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/shinkansendego-db/Exports/Output{\"Ref\":\"PostgresSecretAttachment75CD6F6F\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefPostgresSecretAttachment75CD6F6F9ED7447B"
+          }
+        ],
+        "/shinkansendego-db/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/shinkansendego-db/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "shinkansendego-db"
+    },
+    "shinkansendego-fe.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "shinkansendego-fe.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "shinkansendego-fe": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://121364032553/ap-northeast-1",
+      "properties": {
+        "templateFile": "shinkansendego-fe.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/aae27687dda202a119099bffee016c0e03be0ccf23b5698ef5e0c4afcfa1fa5e.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "shinkansendego-fe.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-lookup-role-121364032553-ap-northeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "shinkansendego-fe.assets"
+      ],
+      "metadata": {
+        "/shinkansendego-fe/WebBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebBucket12880F5B"
+          }
+        ],
+        "/shinkansendego-fe/WebBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebBucketPolicy95D08FAA"
+          }
+        ],
+        "/shinkansendego-fe/WebBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebBucketAutoDeleteObjectsCustomResource9C1A079F"
+          }
+        ],
+        "/shinkansendego-fe/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/shinkansendego-fe/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/shinkansendego-fe/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/shinkansendego-fe/Cdn/Origin1/S3OriginAccessControl/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdnOrigin1S3OriginAccessControl6AC0AEFC"
+          }
+        ],
+        "/shinkansendego-fe/Cdn/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Cdn9963B1AD"
+          }
+        ],
+        "/shinkansendego-fe/WebBucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebBucketName"
+          }
+        ],
+        "/shinkansendego-fe/CloudFrontUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CloudFrontUrl"
+          }
+        ],
+        "/shinkansendego-fe/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/shinkansendego-fe/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/shinkansendego-fe/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "shinkansendego-fe"
+    },
+    "shinkansendego-ecr.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "shinkansendego-ecr.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "shinkansendego-ecr": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://121364032553/ap-northeast-1",
+      "properties": {
+        "templateFile": "shinkansendego-ecr.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/dd524a7675d2d95a0aca10a7c8fb8fb17fe7b61d3fc345eb079a6ace8712f4c7.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "shinkansendego-ecr.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-lookup-role-121364032553-ap-northeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "shinkansendego-ecr.assets"
+      ],
+      "metadata": {
+        "/shinkansendego-ecr/Repo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Repo02AC86CF"
+          }
+        ],
+        "/shinkansendego-ecr/EcrRepoName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcrRepoName"
+          }
+        ],
+        "/shinkansendego-ecr/EcrRepoUri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcrRepoUri"
+          }
+        ],
+        "/shinkansendego-ecr/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/shinkansendego-ecr/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/shinkansendego-ecr/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "shinkansendego-ecr"
+    },
+    "shinkansendego-be.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "shinkansendego-be.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "shinkansendego-be": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://121364032553/ap-northeast-1",
+      "properties": {
+        "templateFile": "shinkansendego-be.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/d1813a4ec8486aad1fd56d285a56c2db408191ba4c60cd36adfc5f732e53126d.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "shinkansendego-be.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-lookup-role-121364032553-ap-northeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "shinkansendego-vpc",
+        "shinkansendego-db",
+        "shinkansendego-be.assets"
+      ],
+      "metadata": {
+        "/shinkansendego-be/VpcConnector": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcConnector"
+          }
+        ],
+        "/shinkansendego-be/AppRunnerEcrAccessRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppRunnerEcrAccessRole23CA5BBD"
+          }
+        ],
+        "/shinkansendego-be/AppRunnerRuntimeRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppRunnerRuntimeRoleDE576B31"
+          }
+        ],
+        "/shinkansendego-be/AppRunnerRuntimeRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppRunnerRuntimeRoleDefaultPolicy693E3D27"
+          }
+        ],
+        "/shinkansendego-be/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/shinkansendego-be/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/shinkansendego-be/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "shinkansendego-be"
+    },
+    "shinkansendego-schedule.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "shinkansendego-schedule.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "shinkansendego-schedule": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://121364032553/ap-northeast-1",
+      "properties": {
+        "templateFile": "shinkansendego-schedule.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/ccf4c8c0d691b2004504021f3182b1a5e0416051b55ced579208a8563b348c6b.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "shinkansendego-schedule.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-lookup-role-121364032553-ap-northeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "shinkansendego-schedule.assets"
+      ],
+      "metadata": {
+        "/shinkansendego-schedule/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/shinkansendego-schedule/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/shinkansendego-schedule/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "shinkansendego-schedule"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

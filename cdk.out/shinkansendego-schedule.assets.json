@@ -1,0 +1,20 @@
+{
+  "version": "39.0.0",
+  "files": {
+    "ccf4c8c0d691b2004504021f3182b1a5e0416051b55ced579208a8563b348c6b": {
+      "source": {
+        "path": "shinkansendego-schedule.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "121364032553-ap-northeast-1": {
+          "bucketName": "cdk-hnb659fds-assets-121364032553-ap-northeast-1",
+          "objectKey": "ccf4c8c0d691b2004504021f3182b1a5e0416051b55ced579208a8563b348c6b.json",
+          "region": "ap-northeast-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-file-publishing-role-121364032553-ap-northeast-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

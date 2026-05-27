@@ -1,9 +1,9 @@
 {
-  "name": "sample-app-infra",
+  "name": "shinkansendego-infra",
   "version": "0.1.0",
   "private": true,
   "bin": {
-    "sample-app": "bin/app.js"
+    "shinkansendego": "bin/app.js"
   },
   "scripts": {
     "build": "tsc",

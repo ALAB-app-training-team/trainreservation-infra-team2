@@ -29,7 +29,7 @@ export class EcrStack extends Stack {
     });
     this.repo.addLifecycleRule({
       description: "Keep last 30 tagged images",
-      tagStatus: TagStatus.TAGGED,
+      tagStatus: TagStatus.ANY,
       maxImageCount: 30,
     });
 

@@ -1,8 +1,8 @@
 {
   "app": "node dist/bin/app.js",
   "context": {
-    "APP_NAME": "sample-app",
-    "VPC_CIDR": "10.110.0.0/24",
+    "APP_NAME": "shinkansendego",
+    "VPC_CIDR": "10.110.1.0/24",
     "CREATE_BE_SERVICE": "false",
     "ENABLE_SCHEDULE": "false",
     "SCHEDULE_WEEKDAYS_ONLY": "false",
