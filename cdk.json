@@ -3,7 +3,7 @@
   "context": {
     "APP_NAME": "shinkansendego",
     "VPC_CIDR": "10.110.1.0/24",
-    "CREATE_BE_SERVICE": "false",
+    "CREATE_BE_SERVICE": "true",
     "ENABLE_SCHEDULE": "false",
     "SCHEDULE_WEEKDAYS_ONLY": "false",
     "DB_BACKUP_RETENTION_DAYS": "1"
