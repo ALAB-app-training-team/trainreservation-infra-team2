@@ -142,6 +142,17 @@
    "Export": {
     "Name": "shinkansendego-db:ExportsOutputRefPostgresSecretAttachment75CD6F6F9ED7447B"
    }
+  },
+  "ExportsOutputFnGetAttPostgres9DC8BB04EndpointAddress36F9722A": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Postgres9DC8BB04",
+     "Endpoint.Address"
+    ]
+   },
+   "Export": {
+    "Name": "shinkansendego-db:ExportsOutputFnGetAttPostgres9DC8BB04EndpointAddress36F9722A"
+   }
   }
  },
  "Parameters": {

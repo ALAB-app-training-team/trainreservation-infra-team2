@@ -114,13 +114,148 @@
     "aws:cdk:path": "shinkansendego-be/AppRunnerRuntimeRole/DefaultPolicy/Resource"
    }
   },
+  "Service": {
+   "Type": "AWS::AppRunner::Service",
+   "Properties": {
+    "HealthCheckConfiguration": {
+     "HealthyThreshold": 1,
+     "Interval": 10,
+     "Protocol": "TCP",
+     "Timeout": 5,
+     "UnhealthyThreshold": 5
+    },
+    "InstanceConfiguration": {
+     "Cpu": "0.25 vCPU",
+     "InstanceRoleArn": {
+      "Fn::GetAtt": [
+       "AppRunnerRuntimeRoleDE576B31",
+       "Arn"
+      ]
+     },
+     "Memory": "0.5 GB"
+    },
+    "NetworkConfiguration": {
+     "EgressConfiguration": {
+      "EgressType": "VPC",
+      "VpcConnectorArn": {
+       "Fn::GetAtt": [
+        "VpcConnector",
+        "VpcConnectorArn"
+       ]
+      }
+     }
+    },
+    "ServiceName": "shinkansendego-backend",
+    "SourceConfiguration": {
+     "AuthenticationConfiguration": {
+      "AccessRoleArn": {
+       "Fn::GetAtt": [
+        "AppRunnerEcrAccessRole23CA5BBD",
+        "Arn"
+       ]
+      }
+     },
+     "AutoDeploymentsEnabled": false,
+     "ImageRepository": {
+      "ImageConfiguration": {
+       "Port": "8080",
+       "RuntimeEnvironmentSecrets": [
+        {
+         "Name": "DB_SECRET_JSON",
+         "Value": {
+          "Fn::ImportValue": "shinkansendego-db:ExportsOutputRefPostgresSecretAttachment75CD6F6F9ED7447B"
+         }
+        }
+       ],
+       "RuntimeEnvironmentVariables": [
+        {
+         "Name": "DB_ENDPOINT",
+         "Value": {
+          "Fn::ImportValue": "shinkansendego-db:ExportsOutputFnGetAttPostgres9DC8BB04EndpointAddress36F9722A"
+         }
+        },
+        {
+         "Name": "DB_NAME",
+         "Value": "postgres"
+        }
+       ]
+      },
+      "ImageIdentifier": {
+       "Fn::Join": [
+        "",
+        [
+         {
+          "Fn::Select": [
+           4,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::ImportValue": "shinkansendego-ecr:ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30"
+             }
+            ]
+           }
+          ]
+         },
+         ".dkr.ecr.",
+         {
+          "Fn::Select": [
+           3,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::ImportValue": "shinkansendego-ecr:ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30"
+             }
+            ]
+           }
+          ]
+         },
+         ".",
+         {
+          "Ref": "AWS::URLSuffix"
+         },
+         "/",
+         {
+          "Fn::ImportValue": "shinkansendego-ecr:ExportsOutputRefRepo02AC86CF4670CBFE"
+         },
+         ":latest"
+        ]
+       ]
+      },
+      "ImageRepositoryType": "ECR"
+     }
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "shinkansendego-be/Service"
+   }
+  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yXHQQ7CIBBA0bN0D2PbaHTPBQxN3Bqk02RaOhAoNoZwd6Ndvf976K43aBuzJ2nHRTp6QRk2Yxdh9vQsJoSYmTGCmvgRrPLMaDcfBZkVivYOhZr47907sp/fHlWr0Jh8jharYD8izOn07s/QXaBt5kQkY+aNVgR9+AVgl1/jjgAAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yWKywqDMBBFv8V9nKq0tHs/oCVCtyUdR4iPSchDKSH/XtTVuedyGqjvD6gKtfkS+6mc9RdSFxROQm3+k5S1LjKTg9QO/LbYGmbCYJxoB+7IrRopC60WSNLMtL8HX2bW+Nv1XDkLSd5Eh0fzjMHGkAWbnmD0l7W5Qn2Dqhi91qWLHPRCIE/+Ac+dzWGlAAAA"
    },
    "Metadata": {
     "aws:cdk:path": "shinkansendego-be/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "AppRunnerServiceArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Service",
+     "ServiceArn"
+    ]
+   }
+  },
+  "AppRunnerServiceUrl": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Service",
+     "ServiceUrl"
+    ]
    }
   }
  },

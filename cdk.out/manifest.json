@@ -258,7 +258,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/50a55e8bea7423a206505c63d2ade2b2227a0d5e994e10e8b28920e04b0b6ca9.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/4e0067edf2532ed2acd8adcaba235b6213fbbb6913025b62d783289d9b30eaf5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -315,6 +315,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefPostgresSecretAttachment75CD6F6F9ED7447B"
+          }
+        ],
+        "/shinkansendego-db/Exports/Output{\"Fn::GetAtt\":[\"Postgres9DC8BB04\",\"Endpoint.Address\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttPostgres9DC8BB04EndpointAddress36F9722A"
           }
         ],
         "/shinkansendego-db/BootstrapVersion": [
@@ -463,7 +469,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/dd524a7675d2d95a0aca10a7c8fb8fb17fe7b61d3fc345eb079a6ace8712f4c7.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/52df04ce8825675da95c8a0b4d574efe8ff5114da002ad955546ab3d1e201b7b.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -503,6 +509,18 @@
             "data": "CDKMetadata"
           }
         ],
+        "/shinkansendego-ecr/Exports/Output{\"Fn::GetAtt\":[\"Repo02AC86CF\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30"
+          }
+        ],
+        "/shinkansendego-ecr/Exports/Output{\"Ref\":\"Repo02AC86CF\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefRepo02AC86CF4670CBFE"
+          }
+        ],
         "/shinkansendego-ecr/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -535,7 +553,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-deploy-role-121364032553-ap-northeast-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-cfn-exec-role-121364032553-ap-northeast-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/d1813a4ec8486aad1fd56d285a56c2db408191ba4c60cd36adfc5f732e53126d.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-121364032553-ap-northeast-1/e999811300461fe934a7f7614c95e06a68206aa91c5b803edb9ef746d93f3645.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -550,6 +568,7 @@
       "dependencies": [
         "shinkansendego-vpc",
         "shinkansendego-db",
+        "shinkansendego-ecr",
         "shinkansendego-be.assets"
       ],
       "metadata": {
@@ -575,6 +594,24 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "AppRunnerRuntimeRoleDefaultPolicy693E3D27"
+          }
+        ],
+        "/shinkansendego-be/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Service"
+          }
+        ],
+        "/shinkansendego-be/AppRunnerServiceArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppRunnerServiceArn"
+          }
+        ],
+        "/shinkansendego-be/AppRunnerServiceUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppRunnerServiceUrl"
           }
         ],
         "/shinkansendego-be/CDKMetadata/Default": [

@@ -83,6 +83,25 @@
      ]
     ]
    }
+  },
+  "ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Repo02AC86CF",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "shinkansendego-ecr:ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30"
+   }
+  },
+  "ExportsOutputRefRepo02AC86CF4670CBFE": {
+   "Value": {
+    "Ref": "Repo02AC86CF"
+   },
+   "Export": {
+    "Name": "shinkansendego-ecr:ExportsOutputRefRepo02AC86CF4670CBFE"
+   }
   }
  },
  "Parameters": {

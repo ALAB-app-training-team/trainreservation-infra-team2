@@ -1044,6 +1044,14 @@
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.178.0"
                 }
+              },
+              "Output{\"Fn::GetAtt\":[\"Postgres9DC8BB04\",\"Endpoint.Address\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"Postgres9DC8BB04\",\"Endpoint.Address\"]}",
+                "path": "shinkansendego-db/Exports/Output{\"Fn::GetAtt\":[\"Postgres9DC8BB04\",\"Endpoint.Address\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.178.0"
+                }
               }
             },
             "constructInfo": {
@@ -1519,6 +1527,32 @@
               "version": "10.4.2"
             }
           },
+          "Exports": {
+            "id": "Exports",
+            "path": "shinkansendego-ecr/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"Repo02AC86CF\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"Repo02AC86CF\",\"Arn\"]}",
+                "path": "shinkansendego-ecr/Exports/Output{\"Fn::GetAtt\":[\"Repo02AC86CF\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.178.0"
+                }
+              },
+              "Output{\"Ref\":\"Repo02AC86CF\"}": {
+                "id": "Output{\"Ref\":\"Repo02AC86CF\"}",
+                "path": "shinkansendego-ecr/Exports/Output{\"Ref\":\"Repo02AC86CF\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.178.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.4.2"
+            }
+          },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
             "path": "shinkansendego-ecr/BootstrapVersion",
@@ -1728,6 +1762,144 @@
               "fqn": "aws-cdk-lib.aws_iam.Role",
               "version": "2.178.0",
               "metadata": []
+            }
+          },
+          "Service": {
+            "id": "Service",
+            "path": "shinkansendego-be/Service",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::AppRunner::Service",
+              "aws:cdk:cloudformation:props": {
+                "healthCheckConfiguration": {
+                  "protocol": "TCP",
+                  "interval": 10,
+                  "timeout": 5,
+                  "healthyThreshold": 1,
+                  "unhealthyThreshold": 5
+                },
+                "instanceConfiguration": {
+                  "cpu": "0.25 vCPU",
+                  "memory": "0.5 GB",
+                  "instanceRoleArn": {
+                    "Fn::GetAtt": [
+                      "AppRunnerRuntimeRoleDE576B31",
+                      "Arn"
+                    ]
+                  }
+                },
+                "networkConfiguration": {
+                  "egressConfiguration": {
+                    "egressType": "VPC",
+                    "vpcConnectorArn": {
+                      "Fn::GetAtt": [
+                        "VpcConnector",
+                        "VpcConnectorArn"
+                      ]
+                    }
+                  }
+                },
+                "serviceName": "shinkansendego-backend",
+                "sourceConfiguration": {
+                  "authenticationConfiguration": {
+                    "accessRoleArn": {
+                      "Fn::GetAtt": [
+                        "AppRunnerEcrAccessRole23CA5BBD",
+                        "Arn"
+                      ]
+                    }
+                  },
+                  "imageRepository": {
+                    "imageIdentifier": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          {
+                            "Fn::Select": [
+                              4,
+                              {
+                                "Fn::Split": [
+                                  ":",
+                                  {
+                                    "Fn::ImportValue": "shinkansendego-ecr:ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          ".dkr.ecr.",
+                          {
+                            "Fn::Select": [
+                              3,
+                              {
+                                "Fn::Split": [
+                                  ":",
+                                  {
+                                    "Fn::ImportValue": "shinkansendego-ecr:ExportsOutputFnGetAttRepo02AC86CFArn39FFAA30"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          ".",
+                          {
+                            "Ref": "AWS::URLSuffix"
+                          },
+                          "/",
+                          {
+                            "Fn::ImportValue": "shinkansendego-ecr:ExportsOutputRefRepo02AC86CF4670CBFE"
+                          },
+                          ":latest"
+                        ]
+                      ]
+                    },
+                    "imageRepositoryType": "ECR",
+                    "imageConfiguration": {
+                      "port": "8080",
+                      "runtimeEnvironmentVariables": [
+                        {
+                          "name": "DB_ENDPOINT",
+                          "value": {
+                            "Fn::ImportValue": "shinkansendego-db:ExportsOutputFnGetAttPostgres9DC8BB04EndpointAddress36F9722A"
+                          }
+                        },
+                        {
+                          "name": "DB_NAME",
+                          "value": "postgres"
+                        }
+                      ],
+                      "runtimeEnvironmentSecrets": [
+                        {
+                          "name": "DB_SECRET_JSON",
+                          "value": {
+                            "Fn::ImportValue": "shinkansendego-db:ExportsOutputRefPostgresSecretAttachment75CD6F6F9ED7447B"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "autoDeploymentsEnabled": false
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apprunner.CfnService",
+              "version": "2.178.0"
+            }
+          },
+          "AppRunnerServiceArn": {
+            "id": "AppRunnerServiceArn",
+            "path": "shinkansendego-be/AppRunnerServiceArn",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.178.0"
+            }
+          },
+          "AppRunnerServiceUrl": {
+            "id": "AppRunnerServiceUrl",
+            "path": "shinkansendego-be/AppRunnerServiceUrl",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.178.0"
             }
           },
           "CDKMetadata": {

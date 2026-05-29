@@ -1,7 +1,7 @@
 {
   "version": "39.0.0",
   "files": {
-    "50a55e8bea7423a206505c63d2ade2b2227a0d5e994e10e8b28920e04b0b6ca9": {
+    "4e0067edf2532ed2acd8adcaba235b6213fbbb6913025b62d783289d9b30eaf5": {
       "source": {
         "path": "shinkansendego-db.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "121364032553-ap-northeast-1": {
           "bucketName": "cdk-hnb659fds-assets-121364032553-ap-northeast-1",
-          "objectKey": "50a55e8bea7423a206505c63d2ade2b2227a0d5e994e10e8b28920e04b0b6ca9.json",
+          "objectKey": "4e0067edf2532ed2acd8adcaba235b6213fbbb6913025b62d783289d9b30eaf5.json",
           "region": "ap-northeast-1",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::121364032553:role/cdk-hnb659fds-file-publishing-role-121364032553-ap-northeast-1"
         }
